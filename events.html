@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+            integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+        body {
+        font: 400 15px Lato, sans-serif;
+        line-height: 1.8;
+        color: #818181;
+
+        }
+        .img-fluid{
+        width: 100%;
+        height: auto;
+        }
+        h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #303030;
+        font-weight: 600;
+        margin-bottom: 30px;
+        }
+        h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        color: #303030;
+        font-weight: 400;
+        margin-bottom: 30px;
+        }
+        .jumbotron {
+        background-color: purple;
+        color: #fff;
+        padding: 100px 25px;
+        font-family: Montserrat, sans-serif;
+        }
+        .container-fluid {
+        padding: 60px 50px;
+        }
+        .bg-grey {
+        background-color: #f6f6f6;
+        }
+        .logo-small {
+        color: #dac2bb;
+        font-size: 50px;
+        }
+        .logo {
+        color: #baaca8;
+        font-size: 200px;
+        }
+        .thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+        }
+        .thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        }
+
+        .item h4 {
+        font-size: 19px;
+        line-height: 1.375em;
+        font-weight: 400;
+        font-style: italic;
+        margin: 70px 0;
+        }
+        .item span {
+        font-style: normal;
+        }
+        .panel {
+        border: 1px solid #85b1c9;
+        border-radius:0;
+        transition: box-shadow 0.5s;
+        }
+        .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+        }
+        .panel-footer .btn:hover {
+        border: 1px solid #f4511e;
+        background-color: #fff;
+        color: #f4511e;
+        }
+        .panel-heading {
+        color: #fff !important;
+        background-color: #cdf41e;
+        padding: 25px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        }
+        .panel-footer {
+        background-color: white !important;
+        }
+        .panel-footer h3 {
+        font-size: 32px;
+        }
+        .panel-footer h4 {
+        color: #aaa;
+        font-size: 14px;
+        }
+        .panel-footer .btn {
+        margin: 15px 0;
+        background-color:#f4511e;
+        color: #fff;
+        }
+        .navbar {
+        margin-bottom: 0;
+        background-color: #f4511e;
+        z-index: 9999;
+        border: 0;
+        font-size: 12px !important;
+        line-height: 1.42857143 !important;
+        letter-spacing: 4px;
+        border-radius: 0;
+        font-family: Montserrat, sans-serif;
+
+        }
+        .navbar li a, .navbar .navbar-brand {
+        color: #fff !important;
+        }
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #1e1ef4 !important;
+        background-color: #ffffff !important;
+        }
+        .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff !important;
+        }
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        }
+
+        .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #333;
+        }
+
+        .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        }
+
+        .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+        }
+
+        .card-image {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        }
+
+        .card-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+        }
+
+        .card-description {
+        font-size: 2rem;
+        color: #777;
+        }
+        .card-body{
+        font-size: 1.2rem;
+        color: #007bff;
+        font-style: italic;
+        }
+        .container mt-5{
+        background-color: #d8cc23;
+        }
+        .mb-3{
+        font-weight:normal;
+        color:rgb(40, 30, 15);
+        }
+        .btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 17px;
+        font-weight: bold;
+        text-align: center;
+        }
+        
+        
+        .modal-header{
+      background-color:purple;
+      color: white;
+    }
+    .modal-footer {
+      background-color: #f1f1f1;
+    }
+
+        .footer {
+        background-color: #1a0c0c;
+        color: white;
+        padding: 20px 0;
+        }
+        .footer a {
+        color: white;
+        text-decoration: none;
+        }
+        .footer a:hover {
+        text-decoration: underline;
+        }
+        .footer .social-icons i {
+        font-size: 24px;
+        margin: 0 10px;
+        }
+        .footer .social-icons a {
+        color: white;
+        }
+        @media screen and (max-width: 768px) {
+        .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+        }
+        .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+        }
+        }
+        @media screen and (max-width: 480px) {
+        .logo {
+        font-size: 150px;
+        }
+        }
+    </style>
+    </head>
+    <body>
+        <body id="myPage" data-spy="scroll" data-target=".navbar"
+            data-offset="60">
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#myPage">Logo</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#home">HOME</a></li>
+                            <li><a href="#about">ABOUT US</a></li>
+                            <li><a href="#events">EVENTS</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="jumbotron text-center">
+                <h1>AKGMA</h1>
+                <p>Welcome to our Community</p>
+                <p>We're delighted you're here!</p>
+                <img src="akgma.jpg" class="img-fluid"
+                    alt="akgma image">
+            </div>
+            <h2>FEATURED EVENTS</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0"
+                        class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="dance.jpg" alt="image1">
+                    </div> 
+                    <div class="item">
+                        <img src="images 2.jpg" alt="dance">
+                    </div>
+
+                    <div class="item">
+                        <img src="images 3.jpg" alt="dance2" width="100%"
+                            height="auto">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel"
+                    data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel"
+                    data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div id="about" class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>About Us</h2><br>
+                        <p>AKGMA Social Club is a registered non-profit
+                            Socio-Cultural organization and certified as per the
+                            federal regulations in the UAE under Community
+                            Development Authority - CDA License No:66. AKGMA
+                            Social Club is the pre-eminent organization for
+                            Malayalees in Dubai region serving the community
+                            since 2011. This Club serves as the bedrock for all
+                            types of cultural, educational and social activities
+                            and to encourage and revitalize the traditional arts
+                            and crafts of Kerala.
+                            <br><button class="btn btn-default btn-lg">Get in
+                                Touch</button>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="company.jpg" alt="Company Image"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!-- Container (Events Section) -->
+                <div id="events" class="container mt-5">
+                    <h2>Events</h2>
+
+                    <!-- Card 1 -->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="card text-center shadow">
+                                <div class="card-body">
+                                    <img src="images (1).jpg"
+                                        class="card-img-top"
+                                        width="100%"
+                                        alt="image1">
+                                    <h5 class="card-title">Gulf Malayali Onam 24
+                                        - ONASADHYA</h5>
+                                    <p class="card-text">Event Date:
+                                        27-12-24</p>
+                                    <a href="#" class="btn btn-primary">View
+                                        Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card text-center shadow">
+                                    <div class="card-body">
+                                        <img src="foodfest.jpg"
+                                            class="card-img-top"
+                                            alt="cartimage">
+                                        <h5 class="card-title">Food Fest
+                                            2024</h5>
+                                        <p class="card-text">Event Date:
+                                            27-12-24</p>
+                                        <a href="#"
+                                            class="btn btn-primary">View
+                                            Gallery</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6 mb-4">
+                                    <div class="card text-center shadow">
+                                        <div class="card-body">
+                                            <img
+                                                src="nadanam.jpg"
+                                                class="card-img-top"
+                                                alt="cartimage">
+                                            <h5 class="card-title">Nadanam -Arts
+                                                Fiesta-2024</h5>
+                                            <p class="card-text">Event Date:
+                                                27-10-24</p>
+                                            <a href="#"
+                                                class="btn btn-primary">View
+                                                Gallery</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Container (Contact Section) -->
+                    <button type="button" class="btn btn-primary"
+                        data-toggle="modal" data-target="#contactModal">
+                        Contact
+                    </button>
+
+                    <!-- Modal structure -->
+                    <div id="contact" class="container">
+                        <div class="modal fade" id="contactModal" tabindex="-1"
+                            role="dialog" aria-labelledby="contactModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title"
+                                            id="contactModalLabel">Contact
+                                            us</h5>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span
+                                                aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="contactForm">
+                                            <div class="form-group">
+                                                <label for="name">Name</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    id="name"
+                                                    placeholder="Enter your name"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email
+                                                    Address</label>
+                                                <input type="email"
+                                                    class="form-control"
+                                                    id="email"
+                                                    placeholder="Enter your email"
+                                                    required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label
+                                                    for="message">Message</label>
+                                                <textarea class="form-control"
+                                                    id="message" rows="4"
+                                                    placeholder="Enter your message"
+                                                    required></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" form="contactForm"
+                                            class="btn btn-warning">Send
+                                            Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <h5>AKGMA</h5>
+                                    <p>A Non Profitable, Non-Religious and
+                                        Non-Political Social Club, Registered
+                                        with the Community Development
+                                        Authority, Govt of Dubai.</p>
+                                </div>
+<!-- Container (Footer Section) -->
+                                <div class="col-md-4">
+                                    <h5>Quick Links</h5>
+                                    <ul class="list-unstyled">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Events</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5>Follow Us</h5>
+                                    <div class="social-icons">
+                                        <a href="fa-brands fa-facebook"
+                                            target="_blank"><i
+                                                class="fab fa-facebook"></i></a>
+                                        <a href="fa-brands fa-twitter"
+                                            target="_blank"><i
+                                                class="fab fa-twitter"></i></a>
+                                        <a href="fa-brands fa-instagram"
+                                            target="_blank"><i
+                                                class="fab fa-instagram"></i></a>
+                                        <a href="fa-brands fa-rocketchat"
+                                            target="_blank"><i
+                                                class="fab fa-rocketchat"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12 text-center">
+                                    <p>&copy; 2024 AKGMA | All Rights
+                                        Reserved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </body>
+            </html>
